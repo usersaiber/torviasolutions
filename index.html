@@ -855,6 +855,89 @@
                 padding: 25px;
             }
         }
+		/* === ESTILOS PARA O NOVO FORMULÁRIO DE CONTATO === */
+
+/* Agrupamento de Label e Input */
+.form-group {
+    margin-bottom: 1rem; /* Aumenta o espaçamento entre os grupos */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem; /* Espaçamento entre o label e o campo */
+    font-weight: 500;
+    color: var(--text-light);
+    text-align: left; /* Alinha o texto do label à esquerda */
+    font-size: 0.95rem;
+}
+
+/* Estilização dos campos de input, select e textarea */
+#contato input[type="text"],
+#contato input[type="email"],
+#contato input[type="tel"],
+#contato select,
+#contato textarea {
+    width: 100%;
+    padding: 0.9rem; /* Mais preenchimento interno */
+    border: 1px solid var(--primary-color);
+    border-radius: 8px; /* Bordas mais arredondadas */
+    background: var(--card-bg);
+    color: var(--text-light);
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+}
+
+#contato select {
+    appearance: none; /* Remove a aparência padrão do select */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2300d4ff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+    background-size: 1em;
+}
+
+/* Foco nos campos */
+#contato input:focus,
+#contato select:focus,
+#contato textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(255, 0, 122, 0.2); /* Sombra de foco */
+}
+
+#contato textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Botão de Envio */
+.submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem; /* Espaço entre o ícone e o texto */
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 50px; /* Botão totalmente arredondado */
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+}
+
+.submit-btn i {
+    font-size: 1rem;
+}
     </style>
 </head>
 <body>
@@ -1062,49 +1145,60 @@
             </div>
         </section>
 
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="fade-in">Entre em Contato</h2>
-                <form class="contact-form fade-in" id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Nome Completo</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Telefone</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Serviço de Interesse</label>
-                        <select id="service" name="service" style="width: 100%; padding: 15px; border: 2px solid var(--border-color); border-radius: 10px; background: var(--bg-darker); color: var(--text-light); font-size: 1rem;">
-                            <option value="">Selecione um serviço</option>
-                            <option value="formatacao">Formatação e Otimização</option>
-                            <option value="virus">Remoção de Vírus</option>
-                            <option value="perifericos">Instalação de Periféricos</option>
-                            <option value="redes">Configuração de Redes</option>
-                            <option value="consultoria">Consultoria em Tecnologia</option>
-                            <option value="manutencao">Manutenção de Equipamentos</option>
-                            <option value="backup">Backup e Recuperação</option>
-                            <option value="celulares">Suporte a Celulares</option>
-                            <option value="planilhas">Planilhas Avançadas</option>
-                            <option value="linux">Suporte Linux</option>
-                            <option value="web">Desenvolvimento Web</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensagem</label>
-                        <textarea id="message" name="message" placeholder="Descreva sua necessidade ou projeto..." required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> Enviar Mensagem
-                    </button>
-                </form>
-            </div>
-        </section>
+<section id="contato">
+    <h2>Entre em Contato</h2>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 1.5rem auto;">
+        Pronto para levar sua tecnologia ao próximo nível? Preencha o formulário abaixo e retornaremos o mais breve possível.
+    </p>
+
+    <form action="https://formsubmit.co/tcleiton80@gmail.com" method="POST" style="max-width: 700px; margin: 1.5rem auto; display: flex; flex-direction: column; gap: 1rem;">
+        
+        <input type="hidden" name="_next" value="https://usersaiber.github.io/torviasolutions/obrigado.html">
+        <input type="hidden" name="_subject" value="Novo Contato do Site - Torvia Solutions">
+        <input type="hidden" name="_captcha" value="false"> <div class="form-group">
+            <label for="name">Nome Completo</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Telefone</label>
+            <input type="tel" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+            <label for="service">Serviço de Interesse</label>
+            <select id="service" name="service">
+                <option value="">Selecione um serviço</option>
+                <option value="formatacao">Formatação e Otimização</option>
+                <option value="virus">Remoção de Vírus</option>
+                <option value="perifericos">Instalação de Periféricos</option>
+                <option value="redes">Configuração de Redes</option>
+                <option value="consultoria">Consultoria em Tecnologia</option>
+                <option value="manutencao">Manutenção de Equipamentos</option>
+                <option value="backup">Backup e Recuperação</option>
+                <option value="celulares">Suporte a Celulares</option>
+                <option value="planilhas">Planilhas Avançadas</option>
+                <option value="linux">Suporte Linux</option>
+                <option value="web">Desenvolvimento Web</option>
+                <option value="outro">Outro Assunto</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" rows="5" placeholder="Descreva sua necessidade ou projeto..." required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+            <i class="fas fa-paper-plane"></i> Enviar Mensagem
+        </button>
+    </form>
+    </section>
     </main>
 
     <footer>
@@ -1131,19 +1225,20 @@
             </div>
             
             <div class="social-links">
-                <a href="https://www.linkedin.com/company/torviasolutions" target="_blank" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/cleiton-teixeira-9050a6227/" target="_blank" aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
                 <a href="https://github.com/usersaiber/torviasolutions" target="_blank" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://wa.me/5549999999999" target="_blank" aria-label="WhatsApp">
+                <a href="https://wa.me/5549984058748" target="_blank" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Torvia Solutions. Todos os direitos reservados.</p>
+                <p>&copy; 2025 Torvia Solutions. Todos os direitos reservados.</p>
+				<p>&copy; Criador Cleiton Teixeira.</p>
             </div>
         </div>
     </footer>
